@@ -1,53 +1,53 @@
-const year = +prompt("Введите ваш год рождения.");
+const year = +prompt("Введіть ваш рік народження.");
 if (isNaN(year)) {
-  alert("Введите число");
+  alert("Введіть число.");
 } else {
   let conclusionYear;
   if (year === 0) {
-    alert(`Жаль,что вы не захотели ввести свой год рождения.`);
-    conclusionYear = `Вы не захотели делиться годом своего рождения.`;
+    alert(`Жаль,що ви не захотіли ввести свій рік народження.`);
+    conclusionYear = `Ви не захотіли ділитися своїм роком народження.`;
   } else {
-    conclusionYear = `Твой год рождения - ${year}.`;
+    conclusionYear = `Ваш рік народження - ${year}.`;
   }
-  const city = prompt("Введите город в котором живете");
+  const city = prompt("Введіть місто,де ви проживаєте.");
   let conclusionCity;
   if (city === null) {
-    alert(`Жаль,что вы не захотели ввести свой город.`);
-    conclusionCity = `Вы не захотели делиться городом в котором живете.`;
+    alert(`Жаль,що ви не захотіли ділитися своїм містом.`);
+    conclusionCity = `Ви не захотіли ділитися містом,де ви проживаєте.`;
   } else {
     switch (city) {
       case "Лондон":
-        conclusionCity = "Вы живете в столице Англии -  в Лондоне.";
+        conclusionCity = "Ви живете в столиці Англії -  в Лондоні.";
         break;
-      case "Киев":
-        conclusionCity = "Вы живете в столице Украины - в Киеве.";
+      case "Київ":
+        conclusionCity = "Ви живете в столиці України - в Києві.";
         break;
       case "Вашингтон":
-        conclusionCity = "Вы живете в столице США - в Вашингтоне.";
+        conclusionCity = "Ви живете в столиці США - в Вашингтоні.";
         break;
       default:
-        conclusionCity = `Вы живете в городе ${city}.`;
+        conclusionCity = `Ви живете в місті ${city}.`;
         break;
     }
   }
-  const sport = prompt("Введите ваш лююбимый вид спорта.");
+  const sport = prompt("Введіть ваш улюблений вид спорту.");
   let conclusionSport;
   if (sport === null) {
-    alert(`Жаль,что вы не захотели ввести свой любимый вид спорта.`);
-    conclusionSport = `Вы не захотели делиться своим любимым видом спорта.`;
+    alert(`Жаль,що ви не захотіли ввести свій улюблений вид спорту.`);
+    conclusionSport = `Ви не захотіли ввести свій улюблений вид спорту.`;
   } else {
     switch (sport) {
       case "футбол":
-        conclusionSport = "Круто!Хочешь играть как Роналду?";
+        conclusionSport = "Круто!Хочеш грати як Роналду?";
         break;
       case "баскетбол":
-        conclusionSport = "Круто!Хочешь играть как Стеф Карри?";
+        conclusionSport = "Круто!Хочеш грати как Стеф Каррі?";
         break;
       case "гонки":
-        conclusionSport = "Круто!Хочешь ездить как Хэмильтон?";
+        conclusionSport = "Круто!Хочеш їздити как Хемільтон?";
         break;
       default:
-        conclusionSport = `Твой любимый вид спорта - ${sport}.`;
+        conclusionSport = `Твій улюблений вид спорта - ${sport}.`;
     }
   }
 
