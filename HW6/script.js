@@ -58,23 +58,28 @@ let users = [
 const balanceArr = users.filter(function (element) {
   if (element.balance > `$2,000.00`) return element;
 });
-balanceArr.forEach(function (element) {
-  console.log(element.phone);
+const arrOfPhone = balanceArr.map(function (element) {
+  return element.phone;
 });
+console.log(arrOfPhone);
 
 //сума всіх балансів користувачів
 
-const stringOfSum = users.reduce(function (acc, element) {
-  return acc + element.balance;
-}, 0);
-console.log(stringOfSum);
-const arr = stringOfSum.split("$");
-const correctArr = arr.map(function (element) {
-  return +element.split(",").join("");
-});
-console.log(correctArr);
-const sum = correctArr.reduce(function (acc, element) {
-  return acc + element;
-}, 0);
+// const stringOfSum = users.reduce(function (acc, element) {
+//   return acc + element.balance;
+// }, 0);
 
-console.log(sum.toFixed(2));
+// const arr = stringOfSum.split("$");
+// const correctArr = arr.map(function (element) {
+//   return +element.split(",").join("");
+// });
+// const sum = correctArr.reduce(function (acc, element) {
+//   return acc + element;
+// }, 0);
+
+// console.log(sum.toFixed(2));
+
+const sumOfBalance = users.reduce(function (acc, element) {
+  return acc + +element.balance.replace("$", "").replace(",", "");
+}, 0);
+console.log(sumOfBalance.toFixed(2));
