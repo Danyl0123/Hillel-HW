@@ -1,0 +1,24 @@
+.wrapper {
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+.btn {
+  display: none;
+  position: absolute;
+}
+.btn-prev {
+  left: 20px;
+}
+.btn-next {
+  right: 20px;
+}
+.wrapper__img {
+  display: none;
+}
+.visible {
+  display: block;
+}
