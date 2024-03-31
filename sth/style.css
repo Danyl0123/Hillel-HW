@@ -1,0 +1,49 @@
+.wrapper {
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+}
+.product-card {
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+  padding: 10px 25px;
+  align-items: start;
+}
+.product-card__img {
+  max-width: 150px;
+}
+.product-card__btn {
+  padding: 10px 25px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 2px solid gray;
+  padding: 15px 30px;
+}
+label {
+}
+.form__input {
+  margin-left: 30px;
+}
+.form__input_radio {
+  padding-left: 30px;
+  display: inline-flex;
+  flex-direction: column;
+}
+.form_select {
+  margin-left: 30px;
+}
+.form_submit {
+  display: inline-flex;
+}
+.container {
+  max-width: 700px;
+
+  margin: 0 auto;
+}

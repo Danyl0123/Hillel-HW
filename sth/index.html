@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="product-card">
+        <img
+          class="product-card__img"
+          src="tissot__watch.jpg.webp"
+          alt="product"
+        />
+        <p class="product-card_info">
+          <span class="product-card__price">17990</span> грн
+        </p>
+        <button class="product-card__btn" type="button">Buy</button>
+      </div>
+
+      <form style="display: none" class="form">
+        <label>
+          Ваше ПІБ:
+          <input class="form__input" name="client_name" type="text" />
+          <div id="client_name-block" style="color: red; display: none">
+            Введіть лише прізвище та імʼя (якщо є,то й по-батькові)
+          </div>
+        </label>
+
+        <label>
+          Місто:
+          <select name="city" class="form_select">
+            <option value="Київ">Київ</option>
+            <option value="Одеса">Одеса</option>
+            <option value="Харків">Харків</option>
+            <option value="Львів">Львів</option>
+          </select>
+        </label>
+        <label>
+          Відділення Нової Пошти:
+          <input class="form__input" name="nova_post" type="number" />
+          <div id="nova_post-block" style="color: red; display: none">
+            Введіть коректний номер відділення!
+          </div>
+        </label>
+        <div>
+          Спосіб оплати:
+          <label class="form__input_radio">
+            Карткою онлайн
+            <input
+              class="form__input"
+              name="payment_method"
+              type="radio"
+              value="Картою на сайті"
+          /></label>
+
+          <label class="form__input_radio">
+            При отриманні у відділенні
+            <input
+              class="form__input"
+              name="payment_method"
+              type="radio"
+              value="При отриманні"
+          /></label>
+          <div id="payment_method-block" style="color: red; display: none">
+            Оберіть спосіб оплати!
+          </div>
+        </div>
+
+        <label>
+          Кількість товару:
+          <input class="form__input" type="number" name="quantity_of_product" />
+          <div id="quantity_of_product-block" style="color: red; display: none">
+            Оберіть коректну кількість товару!
+          </div>
+        </label>
+        <textarea
+          class="form__textarea"
+          name="client_comment"
+          cols="30"
+          rows="10"
+          placeholder="*необовʼязково*"
+        ></textarea>
+        <label>
+          <input type="submit" class="form__submit" value="Submit"
+        /></label>
+      </form>
+    </div>
+    <div class="container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
