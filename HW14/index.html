@@ -23,7 +23,12 @@
       <form style="display: none" class="form">
         <label>
           Ваше ПІБ:
-          <input class="form__input" name="client_name" type="text" />
+          <input
+            class="form__input"
+            id="client_name"
+            name="client_name"
+            type="text"
+          />
           <div id="client_name-block" style="color: red; display: none">
             Введіть лише прізвище та імʼя (якщо є,то й по-батькові)
           </div>
@@ -40,7 +45,12 @@
         </label>
         <label>
           Відділення Нової Пошти:
-          <input class="form__input" name="nova_post" type="number" />
+          <input
+            class="form__input"
+            id="nova_post"
+            name="nova_post"
+            type="number"
+          />
           <div id="nova_post-block" style="color: red; display: none">
             Введіть коректний номер відділення!
           </div>
@@ -71,7 +81,12 @@
 
         <label>
           Кількість товару:
-          <input class="form__input" type="number" name="quantity_of_product" />
+          <input
+            class="form__input"
+            type="number"
+            id="quantity_of_product"
+            name="quantity_of_product"
+          />
           <div id="quantity_of_product-block" style="color: red; display: none">
             Оберіть коректну кількість товару!
           </div>

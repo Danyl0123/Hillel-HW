@@ -17,24 +17,24 @@ submitBtn.addEventListener(`click`, (event) => {
     formObject[key] = value;
   });
   validateForm(formObject);
-  for (let key in formObject) {
-    if (key === "client_comment") continue;
-    if (!formObject[key] || formObject[key] <= 0) return;
-  }
-
-  if (!appended) {
-    const appendedText = `Ваше замовлення буде доставлено у місто ${
-      formObject.city
-    } у відділеня нової пошти #${
-      formObject[`nova_post`]
-    }.Замовлена кількість товару - ${
-      formObject[`quantity_of_product`]
-    }.Ціна товару складатиме - ${
-      formObject[`quantity_of_product`] * priceOfProduct
-    } грн.Коментар до замовлення: 
+  const isFormValid = validateForm(formObject);
+  if (!isFormValid) {
+    return null;
+  } else {
+    if (!appended) {
+      const appendedText = `Ваше замовлення буде доставлено у місто ${
+        formObject.city
+      } у відділеня нової пошти #${
+        formObject[`nova_post`]
+      }.Замовлена кількість товару - ${
+        formObject[`quantity_of_product`]
+      }.Ціна товару складатиме - ${
+        formObject[`quantity_of_product`] * priceOfProduct
+      } грн.Коментар до замовлення: 
     ${formObject[`client_comment`]}`;
-    containerBlock.append(appendedText);
-    appended = true;
+      containerBlock.append(appendedText);
+      appended = true;
+    }
   }
 });
 
@@ -44,6 +44,15 @@ function validateForm(object) {
 
   if (clientNameArray.length < 2 || clientNameArray.length > 3) {
     document.querySelector(`#client_name-block`).style.display = "block";
+    document
+      .querySelector(`#client_name`)
+      .addEventListener(`input`, function () {
+        document.querySelector(`#client_name-block`).style.display = "none";
+        document
+          .querySelector(`#client_name`)
+          .removeEventListener(`input`, arguments.callee);
+      });
+    return false;
   } else {
     document.querySelector(`#client_name-block`).style.display = "none";
   }
@@ -51,6 +60,13 @@ function validateForm(object) {
   const npNumber = object[`nova_post`];
   if (!npNumber || npNumber <= 0 || npNumber > 450) {
     document.querySelector(`#nova_post-block`).style.display = "block";
+    document.querySelector(`#nova_post`).addEventListener(`input`, function () {
+      document.querySelector(`#nova_post-block`).style.display = "none";
+      document
+        .querySelector(`#nova_post`)
+        .removeEventListener(`input`, arguments.callee);
+    });
+    return false;
   } else {
     document.querySelector(`#nova_post-block`).style.display = "none";
   }
@@ -58,6 +74,7 @@ function validateForm(object) {
   const paymentMethod = object[`payment_method`];
   if (!paymentMethod) {
     document.querySelector(`#payment_method-block`).style.display = "block";
+    return false;
   } else {
     document.querySelector(`#payment_method-block`).style.display = "none";
   }
@@ -66,7 +83,18 @@ function validateForm(object) {
   if (!quantityOfProduct || quantityOfProduct <= 0) {
     document.querySelector(`#quantity_of_product-block`).style.display =
       "block";
+    document
+      .querySelector(`#quantity_of_product`)
+      .addEventListener(`input`, function () {
+        document.querySelector(`#quantity_of_product-block`).style.display =
+          "none";
+        document
+          .querySelector(`#quantity_of_product`)
+          .removeEventListener(`input`, arguments.callee);
+      });
+    return false;
   } else {
     document.querySelector(`#quantity_of_product-block`).style.display = "none";
   }
+  return true;
 }
