@@ -74,6 +74,14 @@ function validateForm(object) {
   const paymentMethod = object[`payment_method`];
   if (!paymentMethod) {
     document.querySelector(`#payment_method-block`).style.display = "block";
+    document
+      .querySelector(`.form__radio`)
+      .addEventListener(`click`, function () {
+        document.querySelector(`#payment_method-block`).style.display = "none";
+        document
+          .querySelector(`.form__radio`)
+          .removeEventListener(`form__radio`, arguments.callee);
+      });
     return false;
   } else {
     document.querySelector(`#payment_method-block`).style.display = "none";
