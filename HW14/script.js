@@ -39,10 +39,10 @@ submitBtn.addEventListener(`click`, (event) => {
 });
 
 function validateForm(object) {
-  const clientNameArray = object[`client_name`].split(" ");
-  if (clientNameArray[clientNameArray.length - 1] === "") clientNameArray.pop();
-
-  if (clientNameArray.length < 2 || clientNameArray.length > 3) {
+  const nameValue = object[`client_name`];
+  const namePattern = /^[А-ЯІЄ][а-яіїє]+\s[А-ЯІЄ][а-яієї]+\s[А-ЯІЄ][а-яієї]/;
+  const isValidName = namePattern.test(nameValue);
+  if (!isValidName) {
     document.querySelector(`#client_name-block`).style.display = "block";
     document
       .querySelector(`#client_name`)
@@ -55,6 +55,64 @@ function validateForm(object) {
     return false;
   } else {
     document.querySelector(`#client_name-block`).style.display = "none";
+  }
+
+  const numberValue = object[`client_phone`];
+  if (numberValue.length > 12) {
+    document.querySelector(`#client_number-block`).style.display = `block`;
+
+    document
+      .querySelector(`#client_phone`)
+      .addEventListener(`input`, function () {
+        document.querySelector(`#client_number-block`).style.display = "none";
+        document
+          .querySelector(`#client_phone`)
+          .removeEventListener(`input`, arguments.callee);
+      });
+  } else if (numberValue.length === 11) {
+    document.querySelector(`#client_number-block`).style.display = `block`;
+
+    document
+      .querySelector(`#client_phone`)
+      .addEventListener(`input`, function () {
+        document.querySelector(`#client_number-block`).style.display = "none";
+        document
+          .querySelector(`#client_phone`)
+          .removeEventListener(`input`, arguments.callee);
+      });
+  }
+  const numberPattern = /\+?\d{2}\(\d{3}\)\d{7}|\d{10,12}/;
+  const isValidPhone = numberPattern.test(numberValue);
+  if (!isValidPhone) {
+    document.querySelector(`#client_number-block`).style.display = `block`;
+    document
+      .querySelector(`#client_phone`)
+      .addEventListener(`input`, function () {
+        document.querySelector(`#client_number-block`).style.display = "none";
+        document
+          .querySelector(`#client_phone`)
+          .removeEventListener(`input`, arguments.callee);
+      });
+  } else {
+    document.querySelector(`#client_number-block`).style.display = `none`;
+  }
+
+  const emailValue = object[`client_mail`];
+
+  const emailPattern = /[a-zA-Z0-9]+@[A-Za-z]+\.[a-zA-Z]+/;
+  const isValidEmail = emailPattern.test(emailValue);
+  if (!isValidEmail) {
+    document.querySelector(`#client_mail-block`).style.display = `block`;
+    document
+      .querySelector(`#client_mail`)
+      .addEventListener(`input`, function () {
+        document.querySelector(`#client_mail-block`).style.display = "none";
+        document
+          .querySelector(`#client_mail`)
+          .removeEventListener(`input`, arguments.callee);
+      });
+  } else {
+    document.querySelector(`#client_mail-block`).style.display = `none`;
   }
 
   const npNumber = object[`nova_post`];

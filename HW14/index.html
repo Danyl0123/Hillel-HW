@@ -30,10 +30,33 @@
             type="text"
           />
           <div id="client_name-block" style="color: red; display: none">
-            Введіть лише прізвище та імʼя (якщо є,то й по-батькові)
+            Введіть ПІБ з великої букви
           </div>
         </label>
-
+        <label>
+          Ваш номер телефону
+          <input
+            class="form__input"
+            type="text"
+            id="client_phone"
+            name="client_phone"
+          />
+          <div id="client_number-block" style="display: none; color: red">
+            Введіть коректний номер телефону
+          </div>
+        </label>
+        <label>
+          Ваш email
+          <input
+            class="form__input"
+            type="text"
+            id="client_mail"
+            name="client_mail"
+          />
+          <div id="client_mail-block" style="display: none; color: red">
+            Введіть коректний email
+          </div></label
+        >
         <label>
           Місто:
           <select name="city" class="form_select">
