@@ -9,8 +9,10 @@ class Person {
 class Flat {
   numberOfResidents = [];
   addResident(person) {
-    this.numberOfResidents.push(person);
-    return this.numberOfResidents;
+    if (person instanceof Person) {
+      this.numberOfResidents.push(person);
+      return this.numberOfResidents;
+    } else throw new Error(`не є представником классса "Person"`);
   }
 }
 class House {
@@ -20,14 +22,15 @@ class House {
     this.maxNumberOfFlats = maxNumberOfFlats;
   }
   addFlat(flat) {
-    if (this.arrOfFlats.length < this.maxNumberOfFlats) {
-      this.arrOfFlats.push(flat);
-      return this.arrOfFlats;
-    }
-    console.log(`Будинок вже переповнений квартирами`);
+    if (flat instanceof Flat) {
+      if (this.arrOfFlats.length < this.maxNumberOfFlats) {
+        this.arrOfFlats.push(flat);
+      } else {
+        console.log(`Будинок вже переповнений квартирами`);
+      }
+    } else throw new Error(`Не є представником класу "Flat"`);
   }
 }
-
 const dania = new Person(`man`, `Danil`);
 const andrei = new Person(`man`, `Andrei`);
 const alexey = new Person(`man`, `Alexey`);
@@ -39,7 +42,7 @@ const flat3 = new Flat();
 const house1 = new House(2);
 house1.addFlat(flat1);
 house1.addFlat(flat2);
-// house1.addFlat(flat3);
+/*  house1.addFlat(flat3); */
 
 flat1.addResident(dania);
 flat2.addResident(andrei);
