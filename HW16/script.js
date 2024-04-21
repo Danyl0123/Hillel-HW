@@ -5,7 +5,6 @@ clickButton.on(`click`, function () {
   modalWindow.css(`display`, `flex`);
   $(`body`).css(`overflow`, `hidden`);
   $(`.wrapper`).css(`filter`, `blur(1px)`);
-  console.log($(document).scrollTop());
 });
 closeButton.on(`click`, function () {
   modalWindow.css(`display`, `none`);
