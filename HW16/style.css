@@ -1,0 +1,20 @@
+.wrapper {
+  height: 1500px;
+}
+.wrapper__btn {
+}
+.modal-window {
+  background-color: beige;
+  border-radius: 20px;
+  position: fixed;
+  padding: 30px;
+  top: 30%;
+  left: 35%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.modal-window__btn {
+  align-self: flex-end;
+}
