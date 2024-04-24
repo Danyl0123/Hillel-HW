@@ -1,0 +1,18 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wrapper__select {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+img {
+  width: 70px;
+}
+#weather-block {
+  font-size: 18px;
+  gap: 30px;
+}
+.city-info {
+  max-width: 250px;
+}
