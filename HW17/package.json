@@ -5,11 +5,15 @@
   "main": "scropt.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server"
+    "start": "http-server",
+    "build": "babel src -d lib"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
     "http-server": "^14.1.1"
   }
 }
