@@ -1,0 +1,19 @@
+.sidebar__list {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 20px;
+
+  background-color: rgb(63, 195, 63);
+  padding: 10px 20px;
+}
+.sidebar__link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 18px;
+  font-style: italic;
+}

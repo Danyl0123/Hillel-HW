@@ -1,0 +1,12 @@
+.main__text-block {
+  background-color: aqua;
+  padding: 10px 20px;
+  width: 100%;
+}
+.main__title {
+  font-size: 24px;
+  font-style: italic;
+}
+.main__text {
+  max-width: 800px;
+}
