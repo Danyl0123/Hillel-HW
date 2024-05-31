@@ -1,8 +1,9 @@
 import React from "react";
-import "./card.css";
+import "./Card.css";
 import Logo from "../../../../assets/loginLogo.svg";
-import Input from "../../../../components/loginInput/loginInput";
-import LoginBtn from "../../../../components/loginBtn/loginBtn";
+import Input from "../../../../components/Input/Input";
+import LoginBtn from "../../../../components/Button/Button";
+
 function Card() {
   return (
     <div className="login__card">

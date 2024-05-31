@@ -1,5 +1,5 @@
 import React from "react";
-import "./loginInput.css";
+import "./Input.css";
 
 function Input(props) {
   return (
