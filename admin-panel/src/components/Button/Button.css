@@ -1,0 +1,11 @@
+.login__btn {
+  padding: 10px 12px;
+  background-color: #02a046;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  border-radius: 12px;
+  font-family: "Nunito";
+}
