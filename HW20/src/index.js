@@ -1,3 +1,5 @@
+import "./style.css";
+
 function boo() {
   let i = 0;
   return {
@@ -21,7 +23,6 @@ function boo() {
 }
 
 const iterated = boo();
-console.log(iterated.next());
 console.log(iterated.next());
 console.log(iterated.next());
 console.log(iterated.next());
