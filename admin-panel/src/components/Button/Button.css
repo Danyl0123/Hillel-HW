@@ -9,3 +9,6 @@
   border-radius: 12px;
   font-family: "Nunito";
 }
+button:hover {
+  cursor: pointer;
+}

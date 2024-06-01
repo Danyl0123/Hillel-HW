@@ -1,0 +1,20 @@
+.headder__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 0 30px;
+  margin-top: 30px;
+}
+.header__btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 16px;
+  color: #02a046;
+  font-weight: 600;
+}
+.header__container {
+  padding: 10px 0;
+}

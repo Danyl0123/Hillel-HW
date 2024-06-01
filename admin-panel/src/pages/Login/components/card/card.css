@@ -20,3 +20,30 @@
   flex-direction: column;
   gap: 46px;
 }
+.login__input-icon {
+  position: absolute;
+  z-index: 3;
+  color: green;
+  right: 20px;
+  top: 18px;
+  font-size: 20px;
+}
+.login__input-icon:hover {
+  cursor: pointer;
+}
+.login__input {
+  padding: 14px 18px;
+  background: rgb(217, 217, 217);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  color: #02a046;
+  font-family: "Nunito", "Open Sans", "Helvetica Neue", sans-serif;
+  position: relative;
+}
+.login__input::placeholder {
+  color: #02a046;
+}
+label {
+  position: relative;
+}

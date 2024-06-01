@@ -1,13 +1,12 @@
 import React from "react";
 import "./Input.css";
 
-function Input(props) {
+function Input({ type, placeholder, IconComponent, className, classNameIcon }) {
   return (
-    <input
-      className="login__input"
-      type={props.type}
-      placeholder={props.placeholder}
-    />
+    <label>
+      {IconComponent && <IconComponent className={classNameIcon} />}
+      <input type={type} placeholder={placeholder} className={className} />
+    </label>
   );
 }
 export default Input;
