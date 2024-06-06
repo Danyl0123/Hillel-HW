@@ -4,14 +4,7 @@ import { FaPencilAlt } from "react-icons/fa";
 import { IoLogoBitbucket } from "react-icons/io5";
 import { CgArrowsExchangeAltV } from "react-icons/cg";
 
-const products = [
-  { id: 0, category: "PC", name: "Lenovo Y-50", quantity: 5, price: 25000.0 },
-  { id: 1, category: "PC", name: "Lenovo Y-50", quantity: 5, price: 25000.0 },
-  { id: 2, category: "PC", name: "Lenovo Y-50", quantity: 5, price: 25000.0 },
-  { id: 3, category: "PC", name: "Lenovo Y-50", quantity: 5, price: 25000.0 },
-];
-
-function Table() {
+function Table({ products }) {
   return (
     <table>
       <thead>
