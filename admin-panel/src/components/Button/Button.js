@@ -1,9 +1,9 @@
 import React from "react";
 import "./Button.css";
 
-function LoginBtn({ className, text, IconComponent }) {
+function LoginBtn({ className, text, IconComponent, onClick, disabled }) {
   return (
-    <button className={className}>
+    <button disabled={disabled} onClick={onClick} className={className}>
       {IconComponent && <IconComponent />}
       {text}
     </button>
