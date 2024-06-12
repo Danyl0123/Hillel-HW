@@ -107,9 +107,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <div className="container">
-      {/* <Login /> */}
+      <Login />
       {/* <ProductsTable products={products} /> */}
-      <ProductsPreview products={products} />
+      {/* <ProductsPreview products={products} /> */}
     </div>
   </React.StrictMode>
 );
