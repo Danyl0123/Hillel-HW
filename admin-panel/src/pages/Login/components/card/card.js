@@ -47,7 +47,7 @@ function Card() {
       ...prev,
       [name]: e.target.value.trim() === "",
     }));
-    if (e.target.value.trim.length === 0) {
+    if (e.target.value.trim().length === 0) {
     }
     if (name === "userName") {
       setLoginValue(e.target.value);
