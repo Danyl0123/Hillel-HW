@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Table.css";
 import { FaPencilAlt } from "react-icons/fa";
 import { IoLogoBitbucket } from "react-icons/io5";
 import { CgArrowsExchangeAltV } from "react-icons/cg";
+import { FaSpinner } from "react-icons/fa";
 
 function Table({ products }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (products.length > 0) {
+      setLoading(false);
+    }
+  }, [products]);
+
+  if (loading) {
+    return (
+      <div className="spinner-container">
+        <FaSpinner className="table-spinner" />
+      </div>
+    );
+  }
   return (
     <table>
       <thead>
@@ -12,10 +28,10 @@ function Table({ products }) {
           <td className="table__head">
             ID <CgArrowsExchangeAltV />
           </td>
-          <td className="table__head">
+          {/* <td className="table__head">
             Category
             <CgArrowsExchangeAltV />
-          </td>
+          </td> */}
           <td className="table__head">
             Name
             <CgArrowsExchangeAltV />
@@ -38,10 +54,10 @@ function Table({ products }) {
               className={index % 2 !== 0 ? "table__green-row" : ""}
             >
               <td>{element.id}</td>
-              <td>{element.category}</td>
+              {/* <td>{element.category}</td> */}
               <td>{element.name}</td>
               <td>{element.quantity}</td>
-              <td>{element.price}</td>
+              <td>{element.price}₴</td>
               <td className="table__icons">
                 <FaPencilAlt />
                 <IoLogoBitbucket />
