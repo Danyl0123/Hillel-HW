@@ -28,10 +28,10 @@ function Table({ products }) {
           <td className="table__head">
             ID <CgArrowsExchangeAltV />
           </td>
-          {/* <td className="table__head">
+          <td className="table__head">
             Category
             <CgArrowsExchangeAltV />
-          </td> */}
+          </td>
           <td className="table__head">
             Name
             <CgArrowsExchangeAltV />
@@ -54,7 +54,7 @@ function Table({ products }) {
               className={index % 2 !== 0 ? "table__green-row" : ""}
             >
               <td>{element.id}</td>
-              {/* <td>{element.category}</td> */}
+              <td>{element.category}</td>
               <td>{element.name}</td>
               <td>{element.quantity}</td>
               <td>{element.price}₴</td>
