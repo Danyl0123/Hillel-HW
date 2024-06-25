@@ -6,6 +6,7 @@ import LoginBtn from "../../../../components/Button/Button";
 import { IoEyeSharp } from "react-icons/io5";
 import { GoEyeClosed } from "react-icons/go";
 import { FaSpinner } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Card() {
   const [isPassword, setIsPassword] = useState(true);
@@ -14,6 +15,8 @@ function Card() {
   const [error, setError] = useState({ userName: false, password: false });
   const [authenticationError, setAuthenticationError] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const btnHandleClick = async () => {
     setLoading(true);
@@ -33,6 +36,7 @@ function Card() {
       localStorage.setItem("jwt-token", data.token);
       setAuthenticationError(false);
       setLoading(false);
+      navigate(`/products-table`);
     } else {
       setAuthenticationError(true);
       setLoading(false);

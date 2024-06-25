@@ -7,6 +7,9 @@
   background-color: #ded6d6;
   text-align: center;
 }
+.card:hover {
+  cursor: pointer;
+}
 .card__name {
   margin-bottom: 30px;
 }

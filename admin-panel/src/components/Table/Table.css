@@ -6,6 +6,7 @@ table {
   table-layout: fixed;
   text-align: center;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 td {
   padding: 5px 25px;
