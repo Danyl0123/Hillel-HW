@@ -12,7 +12,7 @@ function ProductCard({ product, productId }) {
   return (
     <div
       className="card"
-      onClick={() => navigate(`/products-preview/:${productId}`)}
+      onClick={() => navigate(`/products-preview/${productId}`)}
     >
       <img className="card__img" src={product.src} alt="item" />
       <p className="card__name">{product.name}</p>
