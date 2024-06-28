@@ -13,19 +13,19 @@ const ProductCardPreview = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`${API_URL}/products/${productId}`);
+      const data = await response.json();
+      setProductInfo(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     document.body.style.backgroundColor = "#ffffff";
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${API_URL}/products/${productId}`);
-        const data = await response.json();
-        setProductInfo(data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(error);
-      }
-    };
     fetchData();
     return () => {
       document.body.style.backgroundColor = "";
