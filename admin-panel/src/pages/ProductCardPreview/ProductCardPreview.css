@@ -1,0 +1,86 @@
+.header {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #02a046;
+}
+.product-card {
+  background-color: #fff;
+}
+.product-card__title-block {
+  margin-bottom: 20px;
+}
+.product-card__icon {
+  font-size: 40px;
+}
+.product-card__icon:hover {
+  cursor: pointer;
+}
+.product-card__title-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.product-card__name {
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 39px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.instock {
+  color: rgb(60, 215, 140);
+}
+.not-instock {
+  color: red;
+}
+.product-card__main-descr {
+  display: flex;
+  align-items: top;
+  gap: 30px;
+  padding: 0 30px;
+  margin-bottom: 40px;
+}
+.product-card__img {
+  max-width: 400px;
+}
+.text {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.product-card__price {
+  padding-left: 50px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.product-card_quant {
+  padding-left: 50px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+}
+.detail-descr {
+  padding-left: 30px;
+  max-width: 505px;
+}
+.descr {
+  margin-bottom: 46px;
+  font-size: 24px;
+  font-weight: 300;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.advantage-block {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.description__bold {
+  font-weight: 900;
+}

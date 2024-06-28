@@ -21,14 +21,14 @@ function ProductsPreview() {
     fetchData();
   }, []);
   return (
-    <>
+    <div className="container">
       <img src={Logo} alt="logo" />
       <div className="card__row">
         {products.map((e) => (
           <ProductCard key={e.id} product={e} productId={e.id} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 export default ProductsPreview;
