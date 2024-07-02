@@ -4,8 +4,17 @@ import { FaPencilAlt } from "react-icons/fa";
 import { IoLogoBitbucket } from "react-icons/io5";
 import { CgArrowsExchangeAltV } from "react-icons/cg";
 import { FaSpinner } from "react-icons/fa";
+import ModalWindowDeleteItem from "../ModalWindowDeleteItem/ModalWindowDeleteItem";
+import { API_URL } from "../../assets/constants";
 
-function Table({ products }) {
+function Table({
+  products,
+  show,
+  item,
+  handleShowDeleteModal,
+  handleClose,
+  handleDeleteItem,
+}) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -60,11 +69,19 @@ function Table({ products }) {
               <td>{element.price}₴</td>
               <td className="table__icons">
                 <FaPencilAlt />
-                <IoLogoBitbucket />
+                <IoLogoBitbucket
+                  onClick={() => handleShowDeleteModal(element)}
+                />
               </td>
             </tr>
           );
         })}
+        <ModalWindowDeleteItem
+          show={show}
+          handleClose={handleClose}
+          item={item}
+          handleDeleteItem={handleDeleteItem}
+        />
       </tbody>
     </table>
   );
