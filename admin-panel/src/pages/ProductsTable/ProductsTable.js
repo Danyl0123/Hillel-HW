@@ -23,7 +23,6 @@ function ProductTable() {
       await fetch(`${API_URL}/products/${id}`, {
         method: `DELETE`,
       });
-      setProducts(products.filter((product) => product.id !== id));
       setIsLoaded(false);
       setItem({});
       setShow(false);
