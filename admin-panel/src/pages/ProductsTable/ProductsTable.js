@@ -9,6 +9,19 @@ function ProductTable() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
+
+  const [showAddEditModal, setShowAddEditModal] = useState(false);
+  const handleCloseAddEditModal = () => {
+    setShowAddEditModal(false);
+    setEditId(null);
+  };
+  const handleShowAddEditModal = () => setShowAddEditModal(true);
+  const [editId, setEditId] = useState(null);
+  const editItem = (id) => {
+    setShowAddEditModal(true);
+    setEditId(id);
+  };
+
   const handleShowDeleteModal = (item) => {
     setShow(true);
     setItem(item);
@@ -47,7 +60,7 @@ function ProductTable() {
   }, [isLoaded]);
   return (
     <div className="container">
-      <Header />
+      <Header handleShowAddEditModal={handleShowAddEditModal} />
       <h1 className="productTable__title">Products</h1>
       <Table
         products={products}
@@ -56,6 +69,10 @@ function ProductTable() {
         handleShowDeleteModal={handleShowDeleteModal}
         handleClose={handleClose}
         handleDeleteItem={handleDeleteItem}
+        showAddEditModal={showAddEditModal}
+        handleCloseAddEditModal={handleCloseAddEditModal}
+        editItem={editItem}
+        editId={editId}
       />
     </div>
   );
