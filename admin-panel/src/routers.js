@@ -9,7 +9,7 @@ import ProductCardPreview from "./pages/ProductCardPreview/ProductCardPreview";
 const AppRouter = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route element={<PrivateRoute />}>
         <Route path="/products-table" element={<ProductTable />} />
         <Route path="/products-preview" element={<ProductsPreview />} />
