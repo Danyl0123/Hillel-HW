@@ -6,6 +6,7 @@ import { CgArrowsExchangeAltV } from "react-icons/cg";
 import { FaSpinner } from "react-icons/fa";
 import ModalWindowDeleteItem from "../ModalWindowDeleteItem/ModalWindowDeleteItem";
 import { API_URL } from "../../assets/constants";
+import AddEditModalWindow from "../AddEditModalWindow/AddEditModalWindow";
 
 function Table({
   products,
@@ -14,6 +15,11 @@ function Table({
   handleShowDeleteModal,
   handleClose,
   handleDeleteItem,
+  showAddEditModal,
+  handleShowAddEditModal,
+  handleCloseAddEditModal,
+  editItem,
+  editId,
 }) {
   const [loading, setLoading] = useState(true);
 
@@ -68,7 +74,7 @@ function Table({
               <td>{element.quantity}</td>
               <td>{element.price}₴</td>
               <td className="table__icons">
-                <FaPencilAlt />
+                <FaPencilAlt onClick={() => editItem(element.id)} />
                 <IoLogoBitbucket
                   onClick={() => handleShowDeleteModal(element)}
                 />
@@ -81,6 +87,11 @@ function Table({
           handleClose={handleClose}
           item={item}
           handleDeleteItem={handleDeleteItem}
+        />
+        <AddEditModalWindow
+          handleClose={handleCloseAddEditModal}
+          show={showAddEditModal}
+          editId={editId}
         />
       </tbody>
     </table>

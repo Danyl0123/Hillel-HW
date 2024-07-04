@@ -1,0 +1,14 @@
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+.form__btn {
+  color: green;
+}
+.form__field {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: green;
+}

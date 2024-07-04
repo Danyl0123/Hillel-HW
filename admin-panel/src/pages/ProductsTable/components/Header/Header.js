@@ -6,7 +6,7 @@ import { FaPlus } from "react-icons/fa";
 import { VscAccount } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 
-function Header() {
+function Header({ handleShowAddEditModal }) {
   const navigate = useNavigate();
   return (
     <div className="header__container">
@@ -22,6 +22,7 @@ function Header() {
           className="header__btn"
           text="Add Product"
           IconComponent={FaPlus}
+          onClick={handleShowAddEditModal}
         />
       </div>
     </div>
