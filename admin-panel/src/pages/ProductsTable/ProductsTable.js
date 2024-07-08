@@ -9,26 +9,62 @@ function ProductTable() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
-
+  const [editId, setEditId] = useState(null);
   const [showAddEditModal, setShowAddEditModal] = useState(false);
+
   const handleCloseAddEditModal = () => {
     setShowAddEditModal(false);
     setEditId(null);
   };
+
   const handleShowAddEditModal = () => setShowAddEditModal(true);
-  const [editId, setEditId] = useState(null);
+
   const editItem = (id) => {
     setShowAddEditModal(true);
     setEditId(id);
+  };
+
+  const editProduct = async (id, value) => {
+    try {
+      await fetch(`${API_URL}/products/${id}`, {
+        method: `PUT`,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(value),
+      });
+      setEditId(null);
+      setShowAddEditModal(false);
+      setIsLoaded(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleShowDeleteModal = (item) => {
     setShow(true);
     setItem(item);
   };
+
   const handleClose = () => {
     setShow(false);
     setItem({});
+  };
+
+  const handleAddProduct = async (data) => {
+    try {
+      await fetch(`${API_URL}/products`, {
+        method: `POST`,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      setIsLoaded(false);
+      setShowAddEditModal(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleDeleteItem = async (id) => {
@@ -43,6 +79,7 @@ function ProductTable() {
       console.error(error);
     }
   };
+
   const fetchData = async () => {
     try {
       const response = await fetch(`${API_URL}/products`);
@@ -52,6 +89,7 @@ function ProductTable() {
       console.error("Error fetching the products:", error);
     }
   };
+
   useEffect(() => {
     if (!isLoaded) {
       fetchData();
@@ -73,6 +111,8 @@ function ProductTable() {
         handleCloseAddEditModal={handleCloseAddEditModal}
         editItem={editItem}
         editId={editId}
+        handleAddProduct={handleAddProduct}
+        editProduct={editProduct}
       />
     </div>
   );
