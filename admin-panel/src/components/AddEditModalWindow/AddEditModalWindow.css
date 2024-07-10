@@ -12,3 +12,12 @@
   border-radius: 8px;
   color: green;
 }
+.form__error {
+  color: red;
+  font-weight: 300;
+  font-size: 16px;
+}
+.input__error {
+  border: 1px solid red;
+  background-color: rgb(254, 228, 228);
+}

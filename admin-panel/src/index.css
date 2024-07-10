@@ -41,3 +41,6 @@ h1 {
     transform: rotate(360deg);
   }
 }
+.logo:hover {
+  cursor: pointer;
+}

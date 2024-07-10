@@ -16,10 +16,11 @@ function Table({
   handleClose,
   handleDeleteItem,
   showAddEditModal,
-  handleShowAddEditModal,
   handleCloseAddEditModal,
   editItem,
   editId,
+  handleAddProduct,
+  editProduct,
 }) {
   const [loading, setLoading] = useState(true);
 
@@ -92,6 +93,19 @@ function Table({
           handleClose={handleCloseAddEditModal}
           show={showAddEditModal}
           editId={editId}
+          editProduct={editProduct}
+          initialValues={
+            editId
+              ? products.find((product) => product.id === editId)
+              : {
+                  category: "",
+                  name: "",
+                  quantity: "",
+                  price: "",
+                  productDescription: "",
+                }
+          }
+          handleAddProduct={handleAddProduct}
         />
       </tbody>
     </table>

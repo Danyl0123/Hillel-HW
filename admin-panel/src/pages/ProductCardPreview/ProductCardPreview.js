@@ -52,7 +52,12 @@ const ProductCardPreview = () => {
   return (
     <div className="preview-card">
       <div className="header">
-        <img src={Logo} alt="logo" />
+        <img
+          src={Logo}
+          alt="logo"
+          onClick={() => navigate(`/products-table`)}
+          className="logo"
+        />
       </div>
       <div className="container">
         <div className="product-card">
