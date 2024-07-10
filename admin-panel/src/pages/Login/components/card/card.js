@@ -9,7 +9,7 @@ import { FaSpinner } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function Card() {
-  const [isPassword, setIsPassword] = useState(true);
+  // const [isPassword, setIsPassword] = useState(true);
   const [loginValue, setLoginValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [error, setError] = useState({ userName: false, password: false });
