@@ -121,11 +121,7 @@ const AddEditModalWindow = ({
                   <Button variant="secondary" onClick={handleClose}>
                     Close
                   </Button>
-                  <Button
-                    variant="success"
-                    type="submit"
-                    // onClick={editId ? handleClose : handleAddProduct(values)}
-                  >
+                  <Button variant="success" type="submit">
                     {editId ? "Save Changes" : "Add Product"}
                   </Button>
                 </Modal.Footer>
